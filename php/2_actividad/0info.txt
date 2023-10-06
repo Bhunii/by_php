@@ -1,0 +1,4 @@
+De las clases que se asignen (televisor y entidad bancaria), crear clases en php con 3 atributos,
+metodos SET  GET y una funcionalidad llamada devolver_fecha_hora
+Crear 5 objetos de cada una e imprimir los datos en lineas separadas
+Un archivo por cada clase, ejemplo cliente.php 
