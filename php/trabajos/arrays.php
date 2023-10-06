@@ -5,6 +5,6 @@ $longitud = count($variable);
 echo $longitud
 
 
-$variable2 = array(1=>'uno', 2=>'dos', 3=>'tres');
+//$variable2 = array(1=>"uno", 2=>"dos", 3=>"tres");
 
 ?>
