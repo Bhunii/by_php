@@ -8,6 +8,9 @@ class Calculadora{
     private string $operacion;
 
     public function __construct(){
+        $this->operando1=$operando1;
+        $this->operando2=$operando2;
+        $this->operacion=$operacion;
     }
 
     public function get_operando1(){
@@ -54,29 +57,25 @@ class Calculadora{
         return $resultado;
     }
 
-    function multiplicar(int $operando1 = 0, int $operando2 = 0, $operacion){
-        if ($operacion == "multiplicacion"){
+    function multiplicar(int $operando1, int $operando2){
+        $resultado = $operando1 - $operando2;
             return $operando1 * $operando2;
-        }
     }
 
-    public function validar($operando1, $operando2, $operacion){
+    public function validar(){
+        $operando1 = $this->get_operando1();
+        $operando2 = $this->get_operando2();
+        $operacion = $this->get_operacion();
         if ($operacion == "suma"){
-            echo sumar($operando1, $operando2);
+            echo $this->sumar($operando1, $operando2);
         } elseif ($operacion == "resta"){
-            echo restar($operando1, $operando2);
+            echo $this->restar($operando1, $operando2);
+        } elseif ($operacion == "multiplicacion"){
+            echo $this->multiplicar($operando1, $operando2);
         }
+
     }
 
-    // public function dividir(int $operando1 = 0, int $operando2 = 0){
-    //     if ($operando2 != 0) {
-    //     return $operando1 / $operando2;
-    //     }
-    //     else {
-    //     echo 'No es posible dividir por cero';
-    //     return;
-    //     }
-    // }
 }
 
 $num1 = $_POST['operador1'];
@@ -85,7 +84,7 @@ $operacion = $_POST['operacion'];
 
 $nuevo = new Calculadora($num1, $num2, $operacion);
 
-$nuevo->validar($operacion);
+$nuevo->validar();
 
 
 
