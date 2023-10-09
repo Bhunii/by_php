@@ -1,0 +1,9 @@
+1.Crear un nuevo proyecto: pooRelacionesApellidosNombres
+2.Crear clase:
+    Computador: (Atributos: fabricante, capacidad_memoria, tipo_memoria, 
+    tipo_almacenamiento, capacidad_almacenamiento, sistema_operativo,
+    suite_oficina, procesador, num_puestor_usb)
+    ComputadorLaptop: (Atributos: tactil(boolean), potencia_bateria)
+    ComputadorDesktop: (Atributos: ups(boolean))
+3.Crear un método estático en la superclase que devuelva la fecha de hoy
+4. Crear una variable estática en la superclase que haga el conteo de objetos creados
