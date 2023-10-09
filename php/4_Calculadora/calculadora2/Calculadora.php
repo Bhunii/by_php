@@ -7,7 +7,7 @@ class Calculadora{
     private int $operando2;
     private string $operacion;
 
-    public function __construct(){
+    public function __construct($operando1, $operando2, $operacion){
         $this->operando1=$operando1;
         $this->operando2=$operando2;
         $this->operacion=$operacion;
@@ -18,8 +18,7 @@ class Calculadora{
     }
 
     public function set_operando1(int $operando1){
-        if(!empty($operando1) && is_numeric($operando1)){
-        $this->operando1 = $operando1;}
+        $this->operando1 = $operando1;
     }
 
     public function get_operando2(){
@@ -27,8 +26,7 @@ class Calculadora{
     }
 
     public function set_operando2(int $operando2){
-        if(!empty($operando2) && is_numeric($operando2)){
-        $this->operando2 = $operando2;}
+        $this->operando2 = $operando2;
     }
 
     public function get_operacion(){
@@ -39,18 +37,6 @@ class Calculadora{
             $resultado = $operando1 + $operando2;
             return $resultado;
     }       
-    
-    // public function restar(int $operando1, int $operando2){
-    //         $resultado = $operando1 - $operando2;
-    //         return $resultado;
-    // }
-
-    // public function multiplicar(int $operando1 = 0, int $operando2 = 0, $operacion){
-    //     if ($operacion == "multiplicacion"){
-    //         return $operando1 * $operando2;
-    //     }
-    // }
-
 
     function restar($operando1, $operando2){
         $resultado = $operando1 - $operando2;
@@ -58,8 +44,17 @@ class Calculadora{
     }
 
     function multiplicar(int $operando1, int $operando2){
-        $resultado = $operando1 - $operando2;
-            return $operando1 * $operando2;
+        $resultado = $operando1 * $operando2;
+        return $resultado;
+    }
+
+    function dividir($operando1, $operando2){
+            if ($operando2 > 0){
+                $resultado = $operando1 / $operando2;
+                return $resultado;       
+            } elseif ($num2 <= 0){
+                return none;
+            }    
     }
 
     public function validar(){
@@ -72,8 +67,9 @@ class Calculadora{
             echo $this->restar($operando1, $operando2);
         } elseif ($operacion == "multiplicacion"){
             echo $this->multiplicar($operando1, $operando2);
+        } elseif ($operacion == "division"){
+            echo $this->dividir($operando1, $operando2);
         }
-
     }
 
 }
